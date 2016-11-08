@@ -1,8 +1,8 @@
 import time
 from slackclient import SlackClient
 
-BOT_TOKEN = <YOUR TOKEN>
-CHANNEL_NAME = <YOUR CHANEL NAME>
+BOT_TOKEN = "<YOUR TOKEN>"
+CHANNEL_NAME = "<YOUR CHANEL NAME>"
 BOT_NAME = "hello_ni_bot"
 def main():
     # Create the slackclient instance
@@ -19,7 +19,9 @@ def main():
                 user = slack_message.get(BOT_NAME)
                 if not message or not user:
                     continue
-                sc.rtm_send_message(CHANNEL_NAME, "<@{}> wrote something...".format(user))
+                sc.rtm_send_message(
+                    CHANNEL_NAME, "<@{}> wrote something...".format(user)
+                )
             # Sleep for half a second
             time.sleep(0.5)
 
